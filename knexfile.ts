@@ -18,6 +18,9 @@ const knexConfig: { [key: string]: Knex.Config } = {
     migrations: {
       directory: path.join(__dirname, "./src/migrations"),
     },
+    seeds: {
+      directory: path.join(__dirname, "./src/seeds"),
+    },
   },
   production: {
     client: "pg",

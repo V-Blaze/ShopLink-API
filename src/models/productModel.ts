@@ -1,4 +1,4 @@
-import knex from "../utils/db"; // Knex instance
+import knex from "../utils/db";
 
 export const getAllProductsAndShops = async () => {
   return knex("products")

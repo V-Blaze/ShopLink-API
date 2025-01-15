@@ -8,6 +8,10 @@ export const getProductsAndShops = async (
 ) => {
   try {
     const data = await productModel.getAllProductsAndShops();
+    if (data.length === 0) {
+      res.status(404).json({ message: "No products or shops found." });
+      return;
+    }
     res.status(200).json(data);
   } catch (error) {
     next(error);
