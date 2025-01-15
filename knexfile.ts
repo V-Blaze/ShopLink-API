@@ -1,9 +1,10 @@
+import { Knex } from "knex";
+import dotenv from "dotenv";
+import path from "path";
+
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
-
-import { Knex } from "knex";
-import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -14,6 +15,9 @@ const knexConfig: { [key: string]: Knex.Config } = {
       filename: "./dev.sqlite3",
     },
     useNullAsDefault: true,
+    migrations: {
+      directory: path.join(__dirname, "./src/migrations"),
+    },
   },
   production: {
     client: "pg",
