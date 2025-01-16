@@ -22,7 +22,7 @@ export const addProductToShop = async (
     .returning("id");
   await knex("shop_products").insert({
     shop_id: shopId,
-    product_id: productId,
+    product_id: productId.id,
   });
   return { id: productId, name, price, shopId };
 };
